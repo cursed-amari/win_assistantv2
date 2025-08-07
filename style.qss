@@ -1,0 +1,48 @@
+/* Основной виджет */
+QWidget {
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+}
+
+/* Стиль кнопок */
+QPushButton {
+    background-color: qlineargradient(
+        spread:pad, x1:0, y1:0, x2:0, y2:1,
+        stop:0 #2d2d2d, stop:1 #252525
+    );
+    color: #e0e0e0;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект наведения */
+QPushButton:hover {
+    background-color: qlineargradient(
+        spread:pad, x1:0, y1:0, x2:0, y2:1,
+        stop:0 #3a3a3a, stop:1 #2d2d2d
+    );
+    border: 1px solid #4a9e9e;
+    color: #f0f0f0;
+}
+
+/* Эффект нажатия */
+QPushButton:pressed {
+    background-color: qlineargradient(
+        spread:pad, x1:0, y1:0, x2:0, y2:1,
+        stop:0 #252525, stop:1 #2d2d2d
+    );
+    border: 1px solid #5abfbf;
+}
+
+/* Фокус (для доступности) */
+QPushButton:focus {
+    outline: none;
+    border: 1px solid #5abfbf;
+    box-shadow: 0 0 0 2px rgba(90, 191, 191, 0.25);
+}
