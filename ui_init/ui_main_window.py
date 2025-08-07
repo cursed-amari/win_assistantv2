@@ -1,5 +1,6 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QBoxLayout, QPushButton, QLabel, QFrame, QSizePolicy
+from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QBoxLayout, QPushButton, QLabel, QFrame, QSizePolicy, \
+    QTextEdit
 
 from settings import COLLAPSED_WIDTH, COLLAPSED_HEIGHT
 from utils import get_window_start_pos
@@ -31,6 +32,7 @@ class UiMainWindow:
         self.frame_widget.setLayout(self.verticalLayout_widget)
 
         self.frame_info = QFrame()
+        self.frame_info.setFixedHeight(25)
         self.frame_info.setLayout(self.verticalLayout_info)
 
         self.verticalLayout_main.addWidget(self.frame_navigate)
@@ -41,8 +43,9 @@ class UiMainWindow:
         self.pushButton_expand.setFixedSize(30, 30)
         self.pushButton_close = QPushButton("✕")
         self.pushButton_close.setFixedSize(30, 30)
-        self.label_info = QLabel("Info")
-        self.label_info.setWordWrap(True)
+        self.label_info = QTextEdit("Info")
+        self.label_info.setMinimumHeight(25)
+        self.label_info.setReadOnly(True)
 
         self.navigate_buttons_list.append(self.pushButton_expand)
         self.navigate_buttons_list.append(self.pushButton_close)

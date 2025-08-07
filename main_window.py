@@ -84,7 +84,7 @@ class MainWindowView(QMainWindow, UiMainWindow):
             else:
                 _logger.warning(f"a plugin named {name} already exists")
                 self.label_info.setText(
-                    f"{self.label_info.text()}\n⚠️ Имя плагина {name} уже занято"
+                    f"{self.label_info.toPlainText()}\n⚠️ Имя плагина {name} уже занято"
                 )
 
     def _on_plugin_selected(self, plugin_name: str) -> None:
