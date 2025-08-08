@@ -19,9 +19,12 @@ class UiMainWindow:
 
         self.verticalLayout_main = QVBoxLayout()
         self.verticalLayout_main.setAlignment(Qt.AlignmentFlag.AlignTop)
+        self.verticalLayout_main.setSpacing(0)
         self.boxLayout_navigation = QBoxLayout(QBoxLayout.Direction.TopToBottom)
         self.verticalLayout_widget = QVBoxLayout()
         self.verticalLayout_info = QVBoxLayout()
+        self.verticalLayout_info.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_info.setSpacing(0)
 
         self.frame_navigate = QFrame()
         self.frame_navigate.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
