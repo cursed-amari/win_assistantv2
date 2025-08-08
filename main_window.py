@@ -79,13 +79,18 @@ class MainWindowView(QMainWindow, UiMainWindow):
                 btn = QPushButton(f"{name[0].capitalize()}{name[-1].capitalize()}")
                 btn.setFixedSize(30, 30)
                 btn.clicked.connect(partial(self._on_plugin_selected, name))
+                widget.info_signal.connect(self._set_info_text)
                 self.boxLayout_navigation.insertWidget(1, btn)
                 self._hovered_height += btn.height() + self.boxLayout_navigation.spacing()
             else:
                 _logger.warning(f"a plugin named {name} already exists")
-                self.label_info.setText(
-                    f"{self.label_info.toPlainText()}\n⚠️ Имя плагина {name} уже занято"
-                )
+                self._set_info_text("⚠️ Имя плагина {name} уже занято", True)
+
+    def _set_info_text(self, text, filling=False):
+        if filling:
+            self.label_info.setText(f"{self.label_info.toPlainText()}\n{text}")
+        else:
+            self.label_info.setText(text)
 
     def _on_plugin_selected(self, plugin_name: str) -> None:
         """
