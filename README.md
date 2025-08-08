@@ -45,8 +45,8 @@ project/
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/username/pyqt6-widget-loader.git
-   cd pyqt6-widget-loader
+   git clone https://github.com/cursed-amari/win_assistantv2
+   cd win_assistantv2
    ```
 
 2. Установите зависимости:
