@@ -1,9 +1,9 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QBoxLayout, QPushButton, QLabel, QFrame, QSizePolicy, \
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QBoxLayout, QPushButton, QFrame, QSizePolicy, \
     QTextEdit
 
 from settings import COLLAPSED_WIDTH, COLLAPSED_HEIGHT
-from utils import get_window_start_pos
+from core.utils import get_window_start_pos
 
 
 class UiMainWindow:
